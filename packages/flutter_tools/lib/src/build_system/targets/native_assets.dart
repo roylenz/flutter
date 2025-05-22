@@ -108,12 +108,11 @@ class DartBuild extends Target {
     final File dartHookResultJsonFile = environment.buildDir.childFile(
       DartBuild.dartHookResultFilename,
     );
-    if (!dartHookResultJsonFile.existsSync()) {
-      return DartHooksResult.empty();
-    }
-    return DartHooksResult.fromJson(
-      json.decode(dartHookResultJsonFile.readAsStringSync()) as Map<String, Object?>,
-    );
+    return !dartHookResultJsonFile.existsSync()
+        ? DartHooksResult.empty()
+        : DartHooksResult.fromJson(
+          json.decode(dartHookResultJsonFile.readAsStringSync()) as Map<String, Object?>,
+        );
   }
 
   @override
