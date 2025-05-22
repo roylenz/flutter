@@ -62,9 +62,7 @@ void main() {
             packagesWithNativeAssetsResult: <String>['bar'],
           ),
         ),
-        throwsToolExit(
-          message: 'Enable data assets using `flutter config --enable-dart-data-assets`',
-        ),
+        throwsToolExit(message: 'Enable using `flutter config --enable-dart-data-assets`'),
       );
     },
   );
@@ -72,7 +70,7 @@ void main() {
   testUsingContext(
     'Data assets: no duplicate assets with linking',
     overrides: <Type, Generator>{
-      FeatureFlags: () => TestFeatureFlags(isNativeAssetsEnabled: true),
+      FeatureFlags: () => TestFeatureFlags(isDartDataAssetsEnabled: true),
       ProcessManager: FakeProcessManager.empty,
     },
     () async {
