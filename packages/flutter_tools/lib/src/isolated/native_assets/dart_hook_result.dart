@@ -2,8 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-import 'package:native_assets_cli/code_assets_builder.dart';
-import 'package:native_assets_cli/data_assets_builder.dart';
+import 'package:code_assets/code_assets.dart';
+import 'package:data_assets/data_assets.dart';
+import 'package:hooks/hooks.dart';
+import 'package:hooks_runner/hooks_runner.dart';
 import '../../asset.dart' show FlutterHookResult, HookAsset;
 import 'native_assets.dart' show FlutterCodeAsset;
 

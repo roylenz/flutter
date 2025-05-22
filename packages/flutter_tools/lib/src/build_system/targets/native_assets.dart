@@ -15,10 +15,6 @@ import '../../isolated/native_assets/native_assets.dart';
 import '../build_system.dart';
 import '../depfile.dart';
 import '../exceptions.dart' show MissingDefineException;
-import 'common.dart';
-
-export '../../isolated/native_assets/native_assets.dart'
-    show CodeAsset, DataAsset, DynamicLoadingBundled;
 
 /// Runs the dart build of the app.
 class DartBuild extends Target {

@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:data_assets/data_assets.dart';
 import 'package:file/file.dart' show File, FileSystem;
 import 'package:file/memory.dart' show MemoryFileSystem;
 import 'package:flutter_tools/src/artifacts.dart' show Artifacts;
@@ -10,7 +11,7 @@ import 'package:flutter_tools/src/build_info.dart' show BuildMode, TargetPlatfor
 import 'package:flutter_tools/src/build_system/build_system.dart' show Environment;
 import 'package:flutter_tools/src/features.dart' show FeatureFlags;
 import 'package:flutter_tools/src/isolated/native_assets/native_assets.dart'
-    show DataAsset, runFlutterSpecificHooks;
+    show runFlutterSpecificHooks;
 
 import '../../src/common.dart' show expect, returnsNormally, setUp, throwsToolExit;
 import '../../src/context.dart'

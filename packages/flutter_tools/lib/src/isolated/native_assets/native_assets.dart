@@ -5,6 +5,7 @@
 // Logic for native assets shared between all host OSes.
 
 import 'package:code_assets/code_assets.dart';
+import 'package:data_assets/data_assets.dart';
 import 'package:hooks/hooks.dart';
 import 'package:hooks_runner/hooks_runner.dart';
 import 'package:logging/logging.dart' as logging;
@@ -134,7 +135,7 @@ Future<void> installCodeAssets({
 /// Programmatic API to be used by Dart launchers to invoke native builds.
 ///
 /// It enables mocking `package:hooks_runner` package.
-/// It also enables mocking native toolchain discovery via [cCompilerConfig].
+/// It also enables mocking native toolchain discovery via [setCCompilerConfig].
 abstract interface class FlutterNativeAssetsBuildRunner {
   /// All packages in the transitive dependencies that have a `build.dart`.
   Future<List<String>> packagesWithNativeAssets();

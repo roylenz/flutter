@@ -2,20 +2,10 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
+import 'package:code_assets/code_assets.dart';
+import 'package:data_assets/data_assets.dart';
 import 'package:file/file.dart' show FileSystem;
-import 'package:native_assets_cli/code_assets_builder.dart'
-    show
-        AndroidCodeConfig,
-        Architecture,
-        CCompilerConfig,
-        CodeAssetExtension,
-        IOSCodeConfig,
-        LinkModePreference,
-        MacOSCodeConfig,
-        OS,
-        ProtocolExtension;
-import 'package:native_assets_cli/data_assets_builder.dart'
-    show DataAssetsExtension, ProtocolExtension;
+import 'package:hooks/hooks.dart';
 
 import '../../base/common.dart' show throwToolExit;
 import '../../build_info.dart'
