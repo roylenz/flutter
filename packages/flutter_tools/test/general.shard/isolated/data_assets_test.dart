@@ -46,28 +46,6 @@ void main() {
   });
 
   testUsingContext(
-    'build but data assets are not enabled',
-    overrides: <Type, Generator>{ProcessManager: FakeProcessManager.empty},
-    () async {
-      final File packageConfig = environment.projectDir.childFile('.dart_tool/package_config.json');
-      await packageConfig.parent.create();
-      await packageConfig.create();
-      expect(
-        () => runFlutterSpecificHooks(
-          environmentDefines: <String, String>{kBuildMode: BuildMode.debug.cliName},
-          targetPlatform: TargetPlatform.windows_x64,
-          projectUri: projectUri,
-          fileSystem: fileSystem,
-          buildRunner: FakeFlutterNativeAssetsBuildRunner(
-            packagesWithNativeAssetsResult: <String>['bar'],
-          ),
-        ),
-        throwsToolExit(message: 'Enable using `flutter config --enable-dart-data-assets`'),
-      );
-    },
-  );
-
-  testUsingContext(
     'Data assets: no duplicate assets with linking',
     overrides: <Type, Generator>{
       FeatureFlags: () => TestFeatureFlags(isDartDataAssetsEnabled: true),

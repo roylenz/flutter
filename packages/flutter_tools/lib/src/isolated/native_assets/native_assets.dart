@@ -324,8 +324,9 @@ Future<bool> _hookRunRequired(FlutterNativeAssetsBuildRunner buildRunner) async 
   if (!featureFlags.isNativeAssetsEnabled && !featureFlags.isDartDataAssetsEnabled) {
     final String packageNames = packagesWithNativeAssets.join(' ');
     throwToolExit(
-      'Package(s) $packageNames require the dart data assets feature to be enabled.\n'
-      '  Enable using `flutter config --enable-dart-data-assets`.',
+      'Package(s) $packageNames require the dart assets feature to be enabled.\n'
+      '  Enable code assets using `flutter config --enable-native-assets`.'
+      '  Enable data assets using `flutter config --enable-dart-data-assets`.',
     );
   }
   return true;
